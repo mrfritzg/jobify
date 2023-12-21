@@ -16,14 +16,24 @@ import {
   Stats,
 } from "./pages";
 
+// Actions for Form data from
+// the register page
 import { action as registerAction } from "./pages/Register";
+import { action as loginAction } from "./pages/Login";
 
+// import loaders from pages
+import { loader as dashboardLoader } from "./pages/DashboardLayout";
+
+// checks the default theme
 export const checkDefaultTheme = () => {
+  // if the true value is already in local storage
+  // then the isDarkTheme will be set to true, else false
   const isDarkTheme = localStorage.getItem("darkTheme") === "true";
   document.body.classList.toggle("dark-theme", isDarkTheme);
   return isDarkTheme;
 };
 
+// invokes the function on app load
 checkDefaultTheme();
 
 const router = createBrowserRouter([
@@ -39,6 +49,7 @@ const router = createBrowserRouter([
       {
         path: "Login",
         element: <Login />,
+        action: loginAction,
       },
       {
         path: "Register",
@@ -48,6 +59,7 @@ const router = createBrowserRouter([
       {
         path: "Dashboard",
         element: <DashboardLayout />,
+        loader: dashboardLoader,
         children: [
           {
             index: true,
