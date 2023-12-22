@@ -20,6 +20,7 @@ import {
 // the register page
 import { action as registerAction } from "./pages/Register";
 import { action as loginAction } from "./pages/Login";
+import { action as addJobAction } from "./pages/AddJob";
 
 // import loaders from pages
 import { loader as dashboardLoader } from "./pages/DashboardLayout";
@@ -64,6 +65,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <AddJob />,
+            action: addJobAction,
           },
           {
             path: "stats",
@@ -85,18 +87,18 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/addjob",
-    element: <AddJob />,
-  },
-  {
-    path: "/Admin",
-    element: <Admin />,
-  },
-  {
-    path: "/AllJobs",
-    element: <AllJobs />,
-  },
+  // {
+  //   path: "/addjob",
+  //   element: <AddJob />,
+  // },
+  // {
+  //   path: "/Admin",
+  //   element: <Admin />,
+  // },
+  // {
+  //   path: "/AllJobs",
+  //   element: <AllJobs />,
+  // },
   {
     path: "/DeleteJob",
     element: <DeleteJob />,
@@ -105,15 +107,15 @@ const router = createBrowserRouter([
     path: "/EditJob",
     element: <EditJob />,
   },
-  {
-    path: "/Profile",
-    element: <Profile />,
-  },
+  // {
+  //   path: "/Profile",
+  //   element: <Profile />,
+  // },
 
-  {
-    path: "/Stats",
-    element: <Stats />,
-  },
+  // {
+  //   path: "/Stats",
+  //   element: <Stats />,
+  // },
 ]);
 
 const App = () => {

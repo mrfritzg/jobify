@@ -26,7 +26,7 @@ export const getAllJobs = async (req, res) => {
 //POST Controller
 export const createJob = async (req, res) => {
   // assign the userId from the JWT to the createdBy in 
-  // the request as you'r creating the job
+  // the request as you're creating the job
   req.body.createdBy = req.user.userId;
   const job = await Job.create(req.body);
   res.status(StatusCodes.CREATED).json({ job });
