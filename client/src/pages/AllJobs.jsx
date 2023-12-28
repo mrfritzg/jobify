@@ -6,14 +6,6 @@ import { useContext, createContext } from "react";
 
 // loader for loading data on page load.
 export const loader = async () => {
-  // try {
-  //   const { data } = await customFetch.get("/jobs");
-  //   return { data };
-  // } catch (error) {
-  //   toast.error(error?.response?.data?.msg);
-  //   return error;
-  // }
-
   try {
     const { data } = await customFetch.get("/jobs");
     return {
@@ -25,14 +17,18 @@ export const loader = async () => {
   }
 };
 
+const AllJobsContext = createContext();
 const AllJobs = () => {
   const { data } = useLoaderData();
-  console.log(data);
+  // console.log(data);
   return (
-    <>
+    <AllJobsContext.Provider value={{ data }}>
       <SearchContainer />
       <JobsContainer />
-    </>
+    </AllJobsContext.Provider>
   );
 };
+
+export const useAllJobsContext = () => useContext(AllJobsContext);
+
 export default AllJobs;
