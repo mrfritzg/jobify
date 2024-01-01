@@ -23,10 +23,18 @@ import { validateTest } from "./middleware/validationMiddleware.js";
 // Status Codes for CRUD & route responses
 import { StatusCodes } from "http-status-codes";
 
+//import cloudinary
+import cloudinary from "cloudinary";
+
 //import routers
 import jobRouter from "./routes/jobRouter.js";
 import authRouter from "./routes/authRouter.js";
 import userRouter from "./routes/userRouter.js";
+
+// public
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import path from "path";
 
 // middleware for error handling
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
@@ -34,11 +42,23 @@ import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 //middleware for authentication
 import { authenticateUser } from "./middleware/authMiddleware.js";
 
+// cloudinarry file cloud storage setup
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
+
+// setup public dir
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 // setup env variables on morgan middleware
 if (process.env.NODE_ENV === "development") {
   //setup middleware to use the morgan package with the 'use' method
   app.use(morgan("dev"));
 }
+
+app.use(express.static(path.resolve(__dirname, "./public")));
 
 // middleware
 app.use(express.json());
