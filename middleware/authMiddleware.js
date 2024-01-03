@@ -12,10 +12,11 @@ export const authenticateUser = (req, res, next) => {
 
   try {
     const { userId, role } = verifyJWT(token);
-    //setup a boolean variable to check for the demo test user
+    // setup a boolean variable to check for the demo test user
+    // the userId is the id of the test user in the database
     const testUser = userId === "65911addcaef92cdf440128a";
     //creating a new user property in the request object that is also an object
-    //holding the userId, role from the token
+    //holding the userId, role, from the token and testUser
     req.user = { userId, role, testUser };
 
     next();

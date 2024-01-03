@@ -6,7 +6,7 @@ import customFetch from "../utils/customFetch";
 import { toast } from "react-toastify";
 
 // react router actions for the form data
-// specifically sending editted user profile data from the form
+// specifically sending edited user profile data from the form
 export const action = async ({ request }) => {
   const formData = await request.formData();
 

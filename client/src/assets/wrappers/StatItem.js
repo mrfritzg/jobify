@@ -1,11 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.article`
   padding: 2rem;
   background: var(--background-secondary-color);
-  border-bottom: 5px solid ${(props) => props.color};
   border-radius: var(--border-radius);
-
+  border-bottom: 5px solid ${(props) => props.color};
   header {
     display: flex;
     align-items: center;
