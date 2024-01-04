@@ -91,6 +91,11 @@ app.use("/api/v1/users", authenticateUser, userRouter);
 //authRouter
 app.use("/api/v1/auth", authRouter);
 
+// route for public production for server.js to point to index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./public", "index.html"));
+});
+
 //more middleware
 // not found -- requests/routes for resources that don't exist
 app.use("*", (req, res) => {
