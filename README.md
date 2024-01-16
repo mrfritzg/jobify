@@ -3,15 +3,15 @@
 
 This is simulated Job Tracking App called Jobify. 
 You are able to:
-          1. Add Jobs
-          2. Edit Jobs
-          3. View List of All Jobs and their status and type
-          4. Delete Jobs 
-          5. Full CRUD functionaliity
-          6. Register to create an account
-          7. Login and manage your job search
-          8. Manage your own account profile
-          9. Free Demo of the site with a test user
+Markup : 1. Add Jobs
+         2. Edit Jobs
+         3. View List of All Jobs and their status and type
+         4. Delete Jobs 
+         5. Full CRUD functionaliity
+         6. Register to create an account
+         7. Login and manage your job search
+         8. Manage your own account profile
+         9. Free Demo of the site with a test user
 
 It is a MERN Full Stack Application app with React Router 6.4+, Vite, Node.js,
 React Query, Mongoose 7+, MongoDB, Cloudinary, Axios. 
