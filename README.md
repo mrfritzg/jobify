@@ -33,7 +33,9 @@ My version is strictly for education and practice.
 
 ### STATS PAGE
 
-### ADMIN/PROFILE PAGE
+### PROFILE PAGE
+
+### ADMIN PAGE
 
 
 This is from a UDEMY tutorial course, taught by a great instructor, John Smilga.
