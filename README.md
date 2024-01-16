@@ -1,4 +1,4 @@
-#### MrFritz Jobify Clone
+# MrFritz Jobify Clone #
 [MrFritz Jobify Clone](https://mrfritz-jobify.onrender.com//)
 
 This is simulated Job Tracking App called Jobify. 
