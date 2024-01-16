@@ -3,6 +3,12 @@
 
 This is simulated Job Tracking App called Jobify. 
 You are able to:
+
+ Markup : 1. A numbered list
+              1. A nested numbered list
+              2. Which is numbered
+          2. Which is numbered
+          
 Markup : 1. Add Jobs
          2. Edit Jobs
          3. View List of All Jobs and their status and type
