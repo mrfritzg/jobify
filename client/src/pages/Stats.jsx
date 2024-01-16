@@ -1,19 +1,34 @@
+import { useQuery } from "@tanstack/react-query";
 import { ChartsContainer, StatsContainer } from "../components";
 import customFetch from "../utils/customFetch";
-import { useLoaderData } from "react-router-dom";
+
+// add a React Query
+// this is the object that will be used by the React query
+const statsQuery = {
+  // this property is called queryKey & it is an identifier
+  queryKey: ["stats"],
+  // this property is a function that is looking for the promise from the fetch
+  queryFn: async () => {
+    const response = await customFetch.get("/jobs/stats");
+    return response.data;
+  },
+};
 
 // loader for loading data on page load.
-export const loader = async () => {
-  try {
-    const response = await customFetch.get("jobs/stats");
-    return response.data;
-  } catch (error) {
-    return error;
-  }
+// queryClient is being sent from the App.js statsLoader for the Stats page
+// React Query is being used in Stats Loader
+export const loader = (queryClient) => async () => {
+  const data = await queryClient.ensureQueryData(statsQuery);
+  return data;
 };
 
 const Stats = () => {
-  const { defaultStats, monthlyApplications } = useLoaderData();
+  // using React useQuery Hook
+  const { data } = useQuery(statsQuery);
+
+  // load the data from the react query
+  const { defaultStats, monthlyApplications } = data;
+
   return (
     <>
       <StatsContainer defaultStats={defaultStats} />

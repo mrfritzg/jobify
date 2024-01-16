@@ -7,12 +7,13 @@ import { toast } from "react-toastify";
 import customFetch from "../utils/customFetch";
 
 // react router actions for the form data
-export const action = async ({ request }) => {
+export const action = (queryClient) => async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
 
   try {
     await customFetch.post("/jobs", data);
+    queryClient.invalidateQueries(["jobs"]);
     toast.success("Job Successfully Created");
     return redirect("all-jobs");
   } catch (error) {

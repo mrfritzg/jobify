@@ -6650,7 +6650,7 @@ export const action =
     const data = Object.fromEntries(formData);
     try {
       await customFetch.post("/jobs", data);
-      queryClient.invalidateQueries(["jobs"]);
+      queryClient.invali`dateQueries(["jobs"]);
       toast.success("Job added successfully ");
       return redirect("all-jobs");
     } catch (error) {

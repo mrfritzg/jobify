@@ -42,12 +42,16 @@ import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 //middleware for authentication
 import { authenticateUser } from "./middleware/authMiddleware.js";
 
-// cloudinarry file cloud storage setup
+// cloudinary file cloud storage setup
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_API_SECRET,
 });
+
+// installing security middleware packages helmet & mongoSanitize
+import helmet from "helmet";
+import mongoSanitize from "express-mongo-sanitize";
 
 // setup public dir
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -82,6 +86,10 @@ app.get("/api/v1/test", (req, res) => {
     msg: "test route",
   });
 });
+
+// implementing security middleware packages helmet & mongoSanitize
+app.use(helmet());
+app.use(mongoSanitize());
 
 //middleware for routers
 //jobRouter, add authenticateUser for all job routes, to protect all job routes
