@@ -30,7 +30,7 @@ My version is strictly for education and practice.
 ![dark theme](https://github.com/mrfritzg/jobify/assets/25967991/e6e27988-5354-4f0f-8264-7b1c5b62cff3)
 
 ### ALL JOBS PAGE
-[dark theme](https://github.com/mrfritzg/jobify/assets/25967991/525c8405-9a79-4c59-bb17-92fb49f60afc)
+![dark theme](https://github.com/mrfritzg/jobify/assets/25967991/525c8405-9a79-4c59-bb17-92fb49f60afc)
 
 ### ADD JOB PAGE
 ![add job](https://github.com/mrfritzg/jobify/assets/25967991/c0e28d58-6284-470f-b178-0bc296569eae)
